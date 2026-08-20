@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Dashboard | Megha Kundu</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- ================= Sidebar ================= -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>🩺Health<span>Care</span></h2>
+            </div>
+
+            <div class="search-box">
+                <input type="text" placeholder="Search Patient">
+                <i class="fa fa-search"></i>
+            </div>
+
+            <h3 class="heading">Patients</h3>
+
+            <div class="patient-list" aria-live="polite">
+                <p class="loading">Loading patients...</p>
+            </div>
+
+        </aside>
+
+        <!-- ================= Main Content ================= -->
+
+        <main class="main">
+
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">Wednesday, August 20, 2026</p>
+                    <h1>Good morning, Dr. Kundu</h1>
+                    <p class="topbar-subtitle">Here is today's clinical overview.</p>
+                </div>
+                <div class="topbar-actions">
+                    <button class="icon-button" id="notificationButton" type="button" aria-label="View notifications"
+                        title="Notifications" aria-expanded="false">
+                        <i class="fa-regular fa-bell"></i><span class="notification-dot"></span>
+                    </button>
+                    <div class="notification-panel" id="notificationPanel" hidden>
+                        <div class="notification-header"><strong>Notifications</strong><span>3 new</span></div>
+                        <button class="notification-item" type="button"><i
+                                class="fa-solid fa-vial"></i><span><strong>Lab report ready</strong><small>Jessica
+                                    Taylor · 12 min ago</small></span></button>
+                        <button class="notification-item" type="button"><i
+                                class="fa-solid fa-comment-medical"></i><span><strong>New patient
+                                    message</strong><small>Ryan Johnson · 2 hr ago</small></span></button>
+                        <button class="notification-item" type="button"><i
+                                class="fa-solid fa-calendar-check"></i><span><strong>Appointment
+                                    reminder</strong><small>Tomorrow at 11:00</small></span></button>
+                    </div>
+                    <button class="provider-chip" id="providerMenuButton" type="button" aria-expanded="false"><span
+                            class="provider-avatar">MK</span><span>Dr. Megha Kundu</span><i
+                            class="fa-solid fa-chevron-down"></i></button>
+                    <div class="provider-menu" id="providerMenu" hidden>
+                        <strong>Dr. Megha Kundu</strong>
+                        <span>Administrator</span>
+                        <button type="button" id="signOutButton">Sign out</button>
+                    </div>
+                </div>
+            </header>
+
+            <section class="summary-grid" aria-label="Practice summary">
+                <article class="summary-card summary-blue">
+                    <div class="summary-icon"><i class="fa-solid fa-user-group"></i></div>
+                    <div><span>Total patients</span><strong>24</strong><small><i class="fa-solid fa-arrow-trend-up"></i>
+                            8% this month</small></div>
+                </article>
+                <article class="summary-card summary-coral">
+                    <div class="summary-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <div><span>Today's visits</span><strong id="todayVisits">—</strong><small>Across 3 care
+                            teams</small></div>
+                </article>
+                <article class="summary-card summary-gold">
+                    <div class="summary-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                    <div><span>Care tasks</span><strong>08</strong><small>3 need attention</small></div>
+                </article>
+                <article class="summary-card summary-green">
+                    <div class="summary-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                    <div><span>Medication adherence</span><strong>94%</strong><small><i
+                                class="fa-solid fa-arrow-trend-up"></i> 2.4% this week</small></div>
+                </article>
+            </section>
+
+            <!-- Diagnosis History -->
+
+            <section class="history">
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h2>Diagnosis History</h2>
+
+                        <select id="historyRange" aria-label="Diagnosis history range">
+                            <option>Last 6 Months</option>
+                            <option>Last Year</option>
+                        </select>
+
+                    </div>
+
+                    <canvas id="bpChart"></canvas>
+
+                </div>
+
+                <!-- Health Cards -->
+                <div class="health-cards">
+
+                    <div class="health-card">
+                        <i class="fa-solid fa-lungs fa-3x"></i>
+                        <h3>Respiratory Rate</h3>
+                        <h1 class="respiratory">20 bpm</h1>
+                        <span>Normal</span>
+                    </div>
+
+                    <div class="health-card">
+                        <i class="fa-solid fa-temperature-three-quarters fa-3x"></i>
+                        <h3>Temperature</h3>
+                        <h1 class="temperature">98.6°F</h1>
+                        <span>Normal</span>
+                    </div>
+
+                    <div class="health-card">
+                        <i class="fa-solid fa-heart-pulse fa-3x"></i>
+                        <h3>Heart Rate</h3>
+                        <h1 class="heart-rate">78 bpm</h1>
+                        <span>Lower than Average</span>
+                    </div>
+                </div>
+
+                <div class="workspace-grid">
+                    <div class="card appointments-card">
+                        <div class="section-heading">
+                            <div>
+                                <p class="eyebrow">Care calendar</p>
+                                <h2>Upcoming appointments</h2>
+                            </div><button class="text-button" type="button" data-scroll="appointmentForm">View schedule
+                                <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <div id="appointmentsList" class="appointments-list" aria-live="polite">
+                            <p class="loading">Loading appointments...</p>
+                        </div>
+                    </div>
+                    <div class="card activity-card">
+                        <div class="section-heading">
+                            <div>
+                                <p class="eyebrow">Live updates</p>
+                                <h2>Recent activity</h2>
+                            </div><span class="live-label"><i class="fa-solid fa-circle"></i> Live</span>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item"><span class="activity-marker blue"><i
+                                        class="fa-solid fa-file-medical"></i></span>
+                                <div><strong>Clinical note updated</strong>
+                                    <p>Jessica Taylor's care plan was reviewed</p><time>12 min ago</time>
+                                </div>
+                            </div>
+                            <div class="activity-item"><span class="activity-marker coral"><i
+                                        class="fa-solid fa-vial"></i></span>
+                                <div><strong>Lab report uploaded</strong>
+                                    <p>Blood panel results are ready to review</p><time>47 min ago</time>
+                                </div>
+                            </div>
+                            <div class="activity-item"><span class="activity-marker green"><i
+                                        class="fa-solid fa-comment-medical"></i></span>
+                                <div><strong>Patient message received</strong>
+                                    <p>Ryan Johnson sent a secure message</p><time>2 hr ago</time>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diagnostic Table -->
+
+                <div class="card">
+
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">Clinical record</p>
+                            <h2>Diagnostic List</h2>
+                        </div><button class="text-button" id="exportDiagnosticsButton" type="button">Export <i
+                                class="fa-solid fa-download"></i></button>
+                    </div>
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Problem</th>
+
+                                <th>Description</th>
+
+                                <th>Status</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Hypertension</td>
+
+                                <td>Chronic high blood pressure</td>
+
+                                <td>Under Observation</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Asthma</td>
+
+                                <td>Respiratory Condition</td>
+
+                                <td>Stable</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Diabetes</td>
+
+                                <td>Blood Sugar Monitoring</td>
+
+                                <td>Controlled</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ================= Right Sidebar ================= -->
+
+        <aside class="profile">
+
+            <div class="profile-card">
+
+                <div class="profile-status"><span class="status-dot"></span> Active patient</div>
+
+                <img src="images/female1.jpg" class="profile-img" alt="P-img">
+
+                <h2>Jessica Taylor</h2>
+
+                <p>Female, 28 Years</p>
+
+                <div class="details">
+
+                    <div class="detail">
+
+                        <i class="fa fa-calendar"></i>
+
+                        <span>23 August 1996</span>
+
+                    </div>
+
+                    <div class="detail">
+
+                        <i class="fa fa-phone"></i>
+
+                        <span>(415) 555-1234</span>
+
+                    </div>
+
+                    <div class="detail">
+
+                        <i class="fa fa-shield"></i>
+
+                        <span>Sunrise Health Assurance</span>
+
+                    </div>
+
+                </div>
+
+                <div class="profile-actions"><button type="button" class="primary-action">Show All
+                        Information</button><button type="button" class="secondary-action" id="messageButton"
+                        title="Send secure message"><i class="fa-regular fa-comment-dots"></i></button></div>
+
+            </div>
+
+            <div class="lab-card">
+
+                <h2>Lab Results</h2>
+
+                <ul>
+
+                    <li>Blood Tests</li>
+
+                    <li>CT Scans</li>
+
+                    <li>X-Ray Reports</li>
+
+                    <li>Urine Test</li>
+
+                    <li>MRI Report</li>
+
+                </ul>
+
+            </div>
+
+            <div class="lab-card appointment-card">
+                <h2>Schedule Visit</h2>
+                <form id="appointmentForm">
+                    <label for="appointmentDate">Date</label>
+                    <input id="appointmentDate" name="date" type="date" required>
+                    <label for="appointmentTime">Time</label>
+                    <input id="appointmentTime" name="time" type="time" required>
+                    <label for="appointmentType">Visit type</label>
+                    <select id="appointmentType" name="type" required>
+                        <option value="Follow-up consultation">Follow-up consultation</option>
+                        <option value="Routine checkup">Routine checkup</option>
+                        <option value="Specialist review">Specialist review</option>
+                    </select>
+                    <button type="submit">Schedule appointment</button>
+                    <p class="form-message" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div class="lab-card medication-card">
+                <div class="section-heading">
+                    <h2>Medication plan</h2><span class="pill green-pill">On track</span>
+                </div>
+                <div class="medication-item"><span class="medication-icon"><i class="fa-solid fa-capsules"></i></span>
+                    <div><strong>Lisinopril</strong>
+                        <p>10 mg · Once daily</p>
+                    </div><i class="fa-solid fa-circle-check medication-check"></i>
+                </div>
+                <div class="medication-item"><span class="medication-icon"><i
+                            class="fa-solid fa-prescription-bottle-medical"></i></span>
+                    <div><strong>Albuterol inhaler</strong>
+                        <p>As needed · 2 puffs</p>
+                    </div><i class="fa-solid fa-circle-check medication-check"></i>
+                </div>
+                <button class="text-button medication-link" type="button">View medication history <i
+                        class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <div class="lab-card care-team-card">
+                <div class="section-heading">
+                    <h2>Care team</h2><button class="text-button" id="createTeamButton" type="button">Add member <i
+                            class="fa-solid fa-plus"></i></button>
+                </div>
+                <div id="teamList">
+                    <p class="loading">Loading care team...</p>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <div class="modal-backdrop" id="patientModal" hidden>
+        <section class="patient-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" type="button" aria-label="Close patient information"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <p class="eyebrow">Patient overview</p>
+            <h2 id="modalTitle">Patient information</h2>
+            <div class="modal-details">
+                <div><span>Patient ID</span><strong id="modalPatientId">—</strong></div>
+                <div><span>Date of birth</span><strong id="modalDob">—</strong></div>
+                <div><span>Insurance</span><strong id="modalInsurance">—</strong></div>
+                <div><span>Phone</span><strong id="modalPhone">—</strong></div>
+            </div>
+            <div class="modal-note"><i class="fa-solid fa-lock"></i> This workspace uses encrypted access controls for
+                protected health information.</div>
+        </section>
+    </div>
+
+    <div class="modal-backdrop" id="messageModal" hidden>
+        <section class="patient-modal compact-modal" role="dialog" aria-modal="true" aria-labelledby="messageTitle">
+            <button class="modal-close" type="button" aria-label="Close message dialog"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <p class="eyebrow">Secure communication</p>
+            <h2 id="messageTitle">Message patient</h2>
+            <form id="messageForm"><label for="messageText">Message</label><textarea id="messageText" maxlength="500"
+                    required placeholder="Write a secure message..."></textarea><button type="submit">Send
+                    message</button>
+                <p class="form-message" id="messageFormStatus" aria-live="polite"></p>
+            </form>
+        </section>
+    </div>
+
+    <div class="modal-backdrop" id="teamModal" hidden>
+        <section class="patient-modal compact-modal" role="dialog" aria-modal="true" aria-labelledby="teamTitle">
+            <button class="modal-close" type="button" aria-label="Close care team dialog"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <p class="eyebrow">Care coordination</p>
+            <h2 id="teamTitle">Add care-team member</h2>
+            <form id="teamForm"><label for="teamName">Full name</label><input id="teamName" name="name" required
+                    placeholder="e.g. Morgan Patel"><label for="teamSpecialty">Specialty</label><input
+                    id="teamSpecialty" name="specialty" required placeholder="e.g. Nutritionist"><button
+                    type="submit">Add to care team</button>
+                <p class="form-message" id="teamFormStatus" aria-live="polite"></p>
+            </form>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+
+    <footer>
+
+        <p>Designed & Developed by Megha Kundu © 2026</p>
+
+    </footer>
+</body>
+
+</html>

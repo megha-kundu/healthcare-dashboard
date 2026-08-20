@@ -1,0 +1,26 @@
+[
+  {
+    "id": "apt-001",
+    "patientId": "pt-001",
+    "date": "2026-08-25",
+    "time": "09:30",
+    "type": "Follow-up consultation",
+    "status": "Scheduled"
+  },
+  {
+    "id": "apt-002",
+    "patientId": "pt-002",
+    "date": "2026-08-26",
+    "time": "11:00",
+    "type": "Cardiology review",
+    "status": "Scheduled"
+  },
+  {
+    "id": "apt-1787199637557",
+    "patientId": "pt-001",
+    "date": "2026-08-29",
+    "time": "12:00",
+    "type": "Specialist review",
+    "status": "Scheduled"
+  }
+]

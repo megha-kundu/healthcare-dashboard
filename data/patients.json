@@ -1,0 +1,508 @@
+[
+    {
+        "id": "pt-001",
+        "name": "Jessica Taylor",
+        "gender": "Female",
+        "age": 28,
+        "dateOfBirth": "1996-08-23",
+        "phone": "(415) 555-1234",
+        "insurance": "Sunrise Health Assurance",
+        "image": "images/female1.jpg",
+        "vitals": {
+            "respiratory": "20 bpm",
+            "temperature": "98.6°F",
+            "heart": "78 bpm"
+        },
+        "chart": {
+            "labels": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+            ],
+            "systolic": [
+                120,
+                118,
+                125,
+                130,
+                128,
+                122
+            ],
+            "diastolic": [
+                80,
+                78,
+                82,
+                84,
+                81,
+                79
+            ]
+        },
+        "diagnosis": [
+            [
+                "Hypertension",
+                "Chronic high blood pressure",
+                "Under Observation"
+            ],
+            [
+                "Asthma",
+                "Respiratory condition",
+                "Stable"
+            ],
+            [
+                "Diabetes",
+                "Blood sugar monitoring",
+                "Controlled"
+            ]
+        ],
+        "labs": [
+            "Blood Tests",
+            "CT Scans",
+            "X-Ray Reports",
+            "Urine Test",
+            "MRI Report"
+        ]
+    },
+    {
+        "id": "pt-002",
+        "name": "Ryan Johnson",
+        "gender": "Male",
+        "age": 45,
+        "dateOfBirth": "1979-03-14",
+        "phone": "(415) 555-8421",
+        "insurance": "Blue Shield",
+        "image": "images/man2.jpg",
+        "vitals": {
+            "respiratory": "18 bpm",
+            "temperature": "99.1°F",
+            "heart": "82 bpm"
+        },
+        "chart": {
+            "labels": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+            ],
+            "systolic": [
+                135,
+                138,
+                140,
+                136,
+                142,
+                139
+            ],
+            "diastolic": [
+                90,
+                92,
+                94,
+                91,
+                93,
+                90
+            ]
+        },
+        "diagnosis": [
+            [
+                "Hypertension",
+                "High blood pressure",
+                "Critical"
+            ],
+            [
+                "High Cholesterol",
+                "Needs diet control",
+                "Active"
+            ],
+            [
+                "Migraine",
+                "Frequent headache",
+                "Monitoring"
+            ]
+        ],
+        "labs": [
+            "Blood Tests",
+            "Lipid Panel",
+            "CT Scans"
+        ]
+    },
+    {
+        "id": "pt-003",
+        "name": "Emily Williams",
+        "gender": "Female",
+        "age": 18,
+        "dateOfBirth": "2006-11-02",
+        "phone": "(415) 555-6622",
+        "insurance": "United Health",
+        "image": "images/female3.jpg",
+        "vitals": {
+            "respiratory": "19 bpm",
+            "temperature": "99.6°F",
+            "heart": "89 bpm"
+        },
+        "chart": {
+            "labels": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+            ],
+            "systolic": [
+                110,
+                112,
+                109,
+                111,
+                113,
+                110
+            ],
+            "diastolic": [
+                70,
+                72,
+                71,
+                70,
+                73,
+                71
+            ]
+        },
+        "diagnosis": [
+            [
+                "Healthy",
+                "Routine checkup",
+                "Normal"
+            ],
+            [
+                "Vitamin D",
+                "Mild deficiency",
+                "Medication"
+            ],
+            [
+                "Cold",
+                "Seasonal infection",
+                "Recovered"
+            ]
+        ],
+        "labs": [
+            "Blood Tests",
+            "Vitamin Panel",
+            "X-Ray Reports"
+        ]
+    },
+    {
+        "id": "pt-004",
+        "name": "Samantha Johnson",
+        "gender": "Female",
+        "age": 56,
+        "dateOfBirth": "1970-01-18",
+        "phone": "(415) 555-7822",
+        "insurance": "Aetna",
+        "image": "images/female4.jpg",
+        "vitals": {
+            "respiratory": "20 bpm",
+            "temperature": "99.1°F",
+            "heart": "90 bpm"
+        },
+        "chart": {
+            "labels": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+            ],
+            "systolic": [
+                145,
+                143,
+                147,
+                150,
+                148,
+                146
+            ],
+            "diastolic": [
+                95,
+                94,
+                96,
+                98,
+                97,
+                95
+            ]
+        },
+        "diagnosis": [
+            [
+                "Diabetes",
+                "Sugar monitoring",
+                "Controlled"
+            ],
+            [
+                "Hypertension",
+                "Blood pressure",
+                "Critical"
+            ],
+            [
+                "Arthritis",
+                "Joint pain",
+                "Medication"
+            ]
+        ],
+        "labs": [
+            "Blood Tests",
+            "Glucose Panel",
+            "X-Ray Reports"
+        ]
+    },
+    {
+        "id": "pt-005",
+        "name": "Ashley Martinez",
+        "gender": "Female",
+        "age": 54,
+        "dateOfBirth": "1972-05-09",
+        "phone": "(415) 555-9211",
+        "insurance": "Cigna",
+        "image": "images/female5.jpg",
+        "vitals": {
+            "respiratory": "23 bpm",
+            "temperature": "96.9°F",
+            "heart": "92 bpm"
+        },
+        "chart": {
+            "labels": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+            ],
+            "systolic": [
+                128,
+                126,
+                129,
+                131,
+                130,
+                127
+            ],
+            "diastolic": [
+                82,
+                80,
+                81,
+                83,
+                82,
+                81
+            ]
+        },
+        "diagnosis": [
+            [
+                "Asthma",
+                "Uses inhaler",
+                "Stable"
+            ],
+            [
+                "Allergy",
+                "Dust allergy",
+                "Medication"
+            ],
+            [
+                "Anemia",
+                "Iron deficiency",
+                "Recovering"
+            ]
+        ],
+        "labs": [
+            "Blood Tests",
+            "Allergy Panel",
+            "X-Ray Reports"
+        ]
+    },
+    {
+        "id": "pt-006",
+        "name": "Olivia Brown",
+        "gender": "Female",
+        "age": 32,
+        "dateOfBirth": "1994-02-27",
+        "phone": "(415) 555-5521",
+        "insurance": "Humana",
+        "image": "images/female6.jpg",
+        "vitals": {
+            "respiratory": "19 bpm",
+            "temperature": "99.0°F",
+            "heart": "96 bpm"
+        },
+        "chart": {
+            "labels": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+            ],
+            "systolic": [
+                118,
+                119,
+                117,
+                120,
+                118,
+                116
+            ],
+            "diastolic": [
+                76,
+                77,
+                75,
+                78,
+                76,
+                74
+            ]
+        },
+        "diagnosis": [
+            [
+                "Healthy",
+                "Routine check",
+                "Normal"
+            ],
+            [
+                "Low Vitamin B12",
+                "Supplement required",
+                "Stable"
+            ],
+            [
+                "Eye Infection",
+                "Treatment",
+                "Recovered"
+            ]
+        ],
+        "labs": [
+            "Blood Tests",
+            "Vitamin Panel",
+            "Eye Exam"
+        ]
+    },
+    {
+        "id": "pt-007",
+        "name": "Tyler Davis",
+        "gender": "Male",
+        "age": 19,
+        "dateOfBirth": "2007-07-12",
+        "phone": "(415) 555-1200",
+        "insurance": "Blue Cross",
+        "image": "images/man1.jpg",
+        "vitals": {
+            "respiratory": "28 bpm",
+            "temperature": "98.1°F",
+            "heart": "97 bpm"
+        },
+        "chart": {
+            "labels": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+            ],
+            "systolic": [
+                122,
+                124,
+                123,
+                121,
+                125,
+                122
+            ],
+            "diastolic": [
+                79,
+                80,
+                78,
+                77,
+                80,
+                79
+            ]
+        },
+        "diagnosis": [
+            [
+                "Sports Injury",
+                "Knee pain",
+                "Recovering"
+            ],
+            [
+                "Sprain",
+                "Ankle injury",
+                "Medication"
+            ],
+            [
+                "Healthy",
+                "Regular checkup",
+                "Normal"
+            ]
+        ],
+        "labs": [
+            "Blood Tests",
+            "Knee X-Ray",
+            "Physical Assessment"
+        ]
+    },
+    {
+        "id": "pt-008",
+        "name": "Kevin Anderson",
+        "gender": "Male",
+        "age": 30,
+        "dateOfBirth": "1996-10-21",
+        "phone": "(415) 555-4488",
+        "insurance": "Medicare",
+        "image": "images/man3.jpg",
+        "vitals": {
+            "respiratory": "18 bpm",
+            "temperature": "95.1°F",
+            "heart": "90 bpm"
+        },
+        "chart": {
+            "labels": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+            ],
+            "systolic": [
+                130,
+                132,
+                131,
+                129,
+                133,
+                130
+            ],
+            "diastolic": [
+                85,
+                86,
+                84,
+                83,
+                87,
+                85
+            ]
+        },
+        "diagnosis": [
+            [
+                "High Cholesterol",
+                "Diet required",
+                "Active"
+            ],
+            [
+                "Back Pain",
+                "Physiotherapy",
+                "Recovering"
+            ],
+            [
+                "Flu",
+                "Recovered",
+                "Normal"
+            ]
+        ],
+        "labs": [
+            "Blood Tests",
+            "Lipid Panel",
+            "Spine X-Ray"
+        ]
+    }
+]
