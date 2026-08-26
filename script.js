@@ -35,6 +35,14 @@ const teamForm = document.querySelector("#teamForm");
 const teamFormStatus = document.querySelector("#teamFormStatus");
 const teamList = document.querySelector("#teamList");
 const historyRange = document.querySelector("#historyRange");
+const currentDate = document.querySelector("#currentDate");
+
+currentDate.textContent = new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+});
 
 async function requestJson(url, options) {
     const response = await fetch(url, options);
